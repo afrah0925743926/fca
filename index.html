@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Keyboard Piano AISHA</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>My Keyboard Piano AISHA</h1>
+  <p class="subtitle">Press <kbd>A</kbd> <kbd>S</kbd> <kbd>D</kbd> <kbd>F</kbd> <kbd>G</kbd> <kbd>H</kbd> <kbd>J</kbd> <kbd>K</kbd> to play. Sharps live on <kbd>W</kbd> <kbd>E</kbd> <kbd>T</kbd> <kbd>Y</kbd> <kbd>U</kbd>. You can also click or tap.</p>
+
+  <!-- BONUS: big display of the last note played -->
+  <div class="display" aria-live="polite">
+    <span id="noteName">–</span>
+    <span id="noteInfo">Play a note to begin</span>
+  </div>
+
+  <!-- Notes float up from here -->
+  <div class="stage" id="stage">
+    <!-- REQUIREMENT: one .piano box holding 8 .key boxes, each with data-key.
+         Black keys (bonus) sit inside the white key on their left. -->
+    <div class="piano">
+      <div class="key" data-key="a">C<small>Do</small><kbd>A</kbd>
+        <div class="key black" data-key="w">C#<kbd>W</kbd></div></div>
+      <div class="key" data-key="s">D<small>Re</small><kbd>S</kbd>
+        <div class="key black" data-key="e">D#<kbd>E</kbd></div></div>
+      <div class="key" data-key="d">E<small>Mi</small><kbd>D</kbd></div>
+      <div class="key" data-key="f">F<small>Fa</small><kbd>F</kbd>
+        <div class="key black" data-key="t">F#<kbd>T</kbd></div></div>
+      <div class="key" data-key="g">G<small>Sol</small><kbd>G</kbd>
+        <div class="key black" data-key="y">G#<kbd>Y</kbd></div></div>
+      <div class="key" data-key="h">A<small>La</small><kbd>H</kbd>
+        <div class="key black" data-key="u">A#<kbd>U</kbd></div></div>
+      <div class="key" data-key="j">B<small>Ti</small><kbd>J</kbd></div>
+      <div class="key" data-key="k">C<small>Do</small><kbd>K</kbd></div>
+    </div>
+  </div>
+
+  <!-- BONUS: sound selector + song mode -->
+  <div class="controls">
+    <label>Sound
+      <select id="waveSelect">
+        <option value="sine">Sine (soft)</option>
+        <option value="triangle">Triangle (flute)</option>
+        <option value="square">Square (retro game)</option>
+        <option value="sawtooth">Sawtooth (buzzy)</option>
+      </select>
+    </label>
+    <label>Song mode
+      <select id="songSelect">
+        <option value="">Free play</option>
+        <option value="twinkle">Twinkle, Twinkle</option>
+        <option value="ode">Ode to Joy</option>
+        <option value="mary">Mary Had a Little Lamb</option>
+      </select>
+    </label>
+  </div>
+  <div class="song" id="songBox" hidden>
+    <div id="songLetters"></div>
+    <p id="songMsg"></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
